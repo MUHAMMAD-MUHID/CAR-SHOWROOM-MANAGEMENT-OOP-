@@ -26,9 +26,11 @@ public:
     string get_person_name() const;
 
     //Member functions
-    string tostring() const;
-    void store_to_file();
-    void view_from_file();
+    virtual string tostring() const = 0;
+    virtual void Customer_Menu() = 0;
+    virtual void Employee_Menu() = 0;
+    // void store_to_file();
+    //void view_from_file();
 
     //Assignment operators
     friend ostream& operator<<(ostream& cout, const Person& obj);

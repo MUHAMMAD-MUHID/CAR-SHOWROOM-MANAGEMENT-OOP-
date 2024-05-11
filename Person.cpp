@@ -25,49 +25,19 @@ using namespace std;
     void Person::set_person_name(string person_name) { this->person_name = person_name; }
 
     // Getter methods
-    int Person::get_person_id() const { return person_id; }
-    string Person::get_person_name() const { return person_name; }
-
-    // Convert to string 
-    string Person::tostring() const {
-        return "Person ID: " + to_string(person_id) + ", Person Name: " + person_name;
+    int Person::get_person_id() const 
+    { 
+        return person_id; 
     }
-
-    // Store data to file
-    void Person::store_to_file() {
-        ofstream file("person_data.txt", ios::app);
-        if (file.is_open()) 
-        {
-            file << person_id << " " << person_name << endl;
-            file.close();
-        }
-        else {
-            cout << "Unable to open file for storing." << endl;
-        }
+    string Person::get_person_name() const 
+    { 
+        return person_name; 
     }
-
-    // View data from file
-    void Person::view_from_file() {
-        ifstream file("person_data.txt");
-        int id;
-        string name;
-        if (file.is_open()) {
-            while (file >> id >> name) {
-                cout << "Person ID: " << id << ", Person Name: " << name << endl;
-            }
-            file.close();
-        }
-        else {
-            cout << "Unable to open file for viewing." << endl;
-        }
-    }
-
-    // Overloading << operator for output
+    
     ostream& operator<<(ostream& cout, const Person& obj) {
         cout << obj.tostring();
         return cout;
     }
-    // Overloading >> operator for input
     istream& operator>>(istream& cin, Person& obj) {
         cout << "Enter Person ID: ";
         cin >> obj.person_id;

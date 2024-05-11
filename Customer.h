@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <fstream>
-#include "Person.h" // Assuming Person class is defined in Person.h
+#include "Person.h"
 using namespace std;
 
 class Customer : public Person {
@@ -24,13 +24,17 @@ public:
     string get_customer_payment_status();
 
     // Utility functions
-    string to_string();
-    void store_to_file();
-    void view_from_file();
+    string tostring() const ;
+    //void store_to_file();
+    //void view_from_file();
+    //void search();
+    void Customer_Menu();
     void membership(string new_membership);
 
     // Stream operator
-    friend ostream& operator<<(ostream& cout, const Customer& obj);
+    friend ostream& operator<<(ostream& cout, const Customer& c);
+
+    
 };
 
 #endif // CUSTOMER_H
