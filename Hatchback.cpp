@@ -25,10 +25,10 @@ void Hatchback::set_cargo_space(int cargo_space) {
 void Hatchback::set_fuel_type(string fuel_type) {
     this->fuel_type = fuel_type;
 }
-int Hatchback::get_cargo_space()const  {
+int Hatchback::get_cargo_space()const {
     return cargo_space;
 }
-string Hatchback::get_fuel_type()const  {
+string Hatchback::get_fuel_type()const {
     return fuel_type;
 }
 string Hatchback::toString() {
@@ -218,6 +218,14 @@ void Hatchback::menu(Hatchback& obj) {
 }
 ostream& operator<<(ostream& cout, const Hatchback& obj) {
     cout << "Car ID : " << obj.get_car_id() << endl;
+    cout << "Car Make : " << obj.get_car_make() << endl;
+    cout << "Car Model : " << obj.get_car_model() << endl;
+    cout << "Car Price : " << obj.get_car_price() << endl;
+    cout << "Car Seating Capacity : " << obj.get_car_seating_capacity() << endl;
+    cout << "Car Ground Clearance : " << obj.get_car_ground_clearance() << endl;
+    cout << "Car Availability : " << obj.get_car_availability() << endl;
+    cout << "Car Cargo Space : " << obj.get_cargo_space() << endl;
+    cout << "Car Fuel Type : " << obj.get_fuel_type() << endl;
     return cout;
 }
 istream& operator>>(istream& cin, Hatchback& obj) {

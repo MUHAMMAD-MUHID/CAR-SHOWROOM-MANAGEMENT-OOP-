@@ -7,10 +7,11 @@ private:
     int car_id, car_seating_capacity, car_ground_clearance;
     string car_make, car_model;
     float car_price;
-    string is_car_available ;
+    string is_car_available;
 public:
     Car();
-    Car(int car_id, string car_make, string car_model, float car_price, int car_seating_capacity, int car_ground_clearance,string availability);
+    Car(int car_id, string car_make, string car_model, float car_price, int car_seating_capacity, int car_ground_clearance, string availability);
+    Car(int car_id, string car_make, string car_model);
     Car(const Car& obj);
     virtual ~Car();
 
@@ -31,6 +32,7 @@ public:
     string get_car_availability() const;
 
     string tostring();
+    string tostring_2();
     virtual void view_from_file() = 0;
     virtual void store_to_file() = 0;
 };

@@ -34,5 +34,5 @@ string Person::get_person_name() const
     return person_name;
 }
 string Person::tostring() {
-    return  to_string(person_id) +"\t" + person_name;
+    return  to_string(person_id) +"\t" + person_name+"\t";
 }

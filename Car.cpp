@@ -12,7 +12,7 @@ Car::Car() {
     car_ground_clearance = 0;
     is_car_available = "n/a";
 }
-Car::Car(int car_id, string car_make, string car_model, float car_price, int car_seating_capacity, int car_ground_clearance,string is_car_available) {
+Car::Car(int car_id, string car_make, string car_model, float car_price, int car_seating_capacity, int car_ground_clearance, string is_car_available) {
     this->car_id = car_id;
     this->car_make = car_make;
     this->car_model = car_model;
@@ -20,6 +20,11 @@ Car::Car(int car_id, string car_make, string car_model, float car_price, int car
     this->car_seating_capacity = car_seating_capacity;
     this->car_ground_clearance = car_ground_clearance;
     this->is_car_available = is_car_available;
+}
+Car::Car(int car_id, string car_make, string car_model) {
+    this->car_id = car_id;
+    this->car_make = car_make;
+    this->car_model = car_model;
 }
 Car::Car(const Car& obj) {
     car_id = obj.car_id;
@@ -36,7 +41,7 @@ void Car::set_car_id(int car_id) {
     this->car_id = car_id;
 }
 void Car::set_car_make(string car_make) {
-this->car_make = car_make;
+    this->car_make = car_make;
 }
 void Car::set_car_model(string car_model) {
     this->car_model = car_model;
@@ -77,6 +82,9 @@ string Car::get_car_availability() const {
 }
 
 string Car::tostring() {
-    return to_string(car_id) + "\t" + car_make + "\t" + car_model + "\t" + to_string(car_price)+"\t" + to_string(car_seating_capacity) + "\t" + to_string(car_ground_clearance)  + "\t" + is_car_available;
+    return to_string(car_id) + "\t" + car_make + "\t" + car_model + "\t" + to_string(car_price) + "\t" + to_string(car_seating_capacity) + "\t" + to_string(car_ground_clearance) + "\t" + is_car_available;
+}
+string Car::tostring_2() {
+    return to_string(car_id) + "\t" + car_make + "\t" + car_model;
 }
 

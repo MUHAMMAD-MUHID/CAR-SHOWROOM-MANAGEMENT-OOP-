@@ -9,12 +9,11 @@ private:
 	string service_name;
 public:
 	Service();
-	Service(int service_id,string service_name);
-	Service(Service& obj);
+	Service(int service_id, string service_name);
+	Service(const Service& obj);
+	string tostring();
 	void set_service_id(int service_id);
 	void set_service_name(string service_name);
-	int get_service_id();
-	string get_service_name();
-
-
+	int get_service_id()const;
+	string get_service_name()const;
 };

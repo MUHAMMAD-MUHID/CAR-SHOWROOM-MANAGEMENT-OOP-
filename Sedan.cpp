@@ -218,6 +218,14 @@ void Sedan::menu(Sedan& obj) {
 }
 ostream& operator<<(ostream& cout, const Sedan& obj) {
     cout << "Car ID : " << obj.get_car_id() << endl;
+    cout << "Car Make : " << obj.get_car_make() << endl;
+    cout << "Car Model : " << obj.get_car_model() << endl;
+    cout << "Car Price : " << obj.get_car_price() << endl;
+    cout << "Car Seating Capacity : " << obj.get_car_seating_capacity() << endl;
+    cout << "Car Ground Clearance : " << obj.get_car_ground_clearance() << endl;
+    cout << "Car Availability : " << obj.get_car_availability() << endl;
+    cout << "Car Trunk Capacity : " << obj.get_trunk_capacity() << endl;
+    cout << "Car Fuel Efficiency : " << obj.get_fuel_efficiency() << endl;
     return cout;
 }
 istream& operator>>(istream& cin, Sedan& obj) {

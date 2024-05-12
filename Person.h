@@ -25,4 +25,6 @@ public:
     virtual void view_from_file() = 0;
     virtual void store_to_file() = 0;
 };
+
 #endif 
+

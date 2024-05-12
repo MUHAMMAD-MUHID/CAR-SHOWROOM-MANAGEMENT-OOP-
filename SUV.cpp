@@ -10,7 +10,7 @@ SUV::SUV() : Car() {
     offroad_capability = 0;
     towing_capacity = 0;
 }
-SUV::SUV(int car_id, string car_make, string car_model, float car_price, int car_seating_capacity, int car_ground_clearance, string is_car_available, int offroad_capability, int towing_capacity) : Car(car_id, car_make, car_model, car_price, car_seating_capacity, car_ground_clearance,is_car_available) {
+SUV::SUV(int car_id, string car_make, string car_model, float car_price, int car_seating_capacity, int car_ground_clearance, string is_car_available, int offroad_capability, int towing_capacity) : Car(car_id, car_make, car_model, car_price, car_seating_capacity, car_ground_clearance, is_car_available) {
     this->offroad_capability = offroad_capability;
     this->towing_capacity = towing_capacity;
 }
@@ -96,7 +96,7 @@ void SUV::update() {
     ofstream fout("temp.txt");
     if (fin.is_open() && fout.is_open()) {
         bool found = false; int car_id, car_seating_capacity, car_ground_clearance; string car_make, car_model, availability; float car_price;
-        while (fin>>car_id>>car_make>>car_model>>car_price>>car_seating_capacity>>car_ground_clearance>>availability>>offroad_capability>>towing_capacity) {
+        while (fin >> car_id >> car_make >> car_model >> car_price >> car_seating_capacity >> car_ground_clearance >> availability >> offroad_capability >> towing_capacity) {
             if (car_id == id) {
                 found = true;
                 cout << "Enter Car ID: ";
@@ -160,7 +160,7 @@ void SUV::del() {
                 found = true;
             }
             else {
-                fout << car_id <<"\t" << car_make << "\t" << car_model << "\t" << car_price << "\t" << car_seating_capacity << "\t" << car_ground_clearance << "\t" << availability << "\t" << offroad_capability << "\t" << towing_capacity<<endl;
+                fout << car_id << "\t" << car_make << "\t" << car_model << "\t" << car_price << "\t" << car_seating_capacity << "\t" << car_ground_clearance << "\t" << availability << "\t" << offroad_capability << "\t" << towing_capacity << endl;
             }
         }
         fin.close();
@@ -218,6 +218,14 @@ void SUV::menu(SUV& obj) {
 }
 ostream& operator<<(ostream& cout, const SUV& obj) {
     cout << "Car ID : " << obj.get_car_id() << endl;
+    cout << "Car Make : " << obj.get_car_make() << endl;
+    cout << "Car Model : " << obj.get_car_model() << endl;
+    cout << "Car Price : " << obj.get_car_price() << endl;
+    cout << "Car Seating Capacity : " << obj.get_car_seating_capacity() << endl;
+    cout << "Car Ground Clearance : " << obj.get_car_ground_clearance() << endl;
+    cout << "Car Availability : " << obj.get_car_availability() << endl;
+    cout << "Car Offroad Capability : " << obj.get_offroad_capability() << endl;
+    cout << "Car Towing Capacity : " << obj.get_towing_capacity() << endl;
     return cout;
 }
 istream& operator>>(istream& cin, SUV& obj) {
